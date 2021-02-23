@@ -50,7 +50,16 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
+function employeeUpdater(){
+  for(i = 0; i < employees.length; i++){
+    if (employees[i].firstName === 'Theo'){
+      employees.splice(i, 1)
+    }else if(employees[i].firstName === 'Lorie'){
+      employees[i].department = 'HR'
+    }
+  }
+  return employees
+}
 
 
 
@@ -67,9 +76,17 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     2. Use nested for loops to check for duplicate numbers, and then remove the duplicates from the array.
     3. Return the updated array.
 */
-
-//Code Here
-
+function removeDuplicates(){
+  for(i=0;i<workplaceAccidents.length; i++){
+    for(j=i+1; j<workplaceAccidents.length;j++){
+      if(workplaceAccidents[i] === workplaceAccidents[j]){
+        workplaceAccidents.splice(j, 1)
+        j--
+      }
+    }
+  }
+  return workplaceAccidents
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -96,9 +113,9 @@ var cat = {
     2. Assign fluffy2ndFriend the name of Fluffy's 2nd friend.
 */
 
-//Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+
+var grumpyActivity = cat.catFriends[0].activities[1]
+var fluffy2ndFriend = cat.catFriends[1].name;
 
 
 
@@ -138,9 +155,14 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
-
-
+function recordCleaner(){
+  let car = myCar.accidents
+  for(i = 0; i < car.length; i++){
+    car[i].atFaultForAccident = false
+  }
+  return myCar
+}
+console.log(recordCleaner())
 
 ////////// PROBLEM 5 //////////
 
@@ -157,17 +179,17 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-function looper(arr){
+function looper(){
 
-  for(i = 0; i < arr.length; i++){
-    for(j = 0; j < arr[i].length; j++){
-      if(arr[i][j] % 2 === 0){
-        arr[i][j] = 'even'
+  for(i = 0; i < numsArr.length; i++){
+    for(j = 0; j < numsArr[i].length; j++){
+      if(numsArr[i][j] % 2 === 0){
+        numsArr[i][j] = 'even'
       }else{
-        arr[i][j] = 'odd'
+        numsArr[i][j] = 'odd'
       }
     }
   }
-  return arr
+  return numsArr
+
 }
-console.log(looper(numsArr))
