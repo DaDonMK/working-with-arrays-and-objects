@@ -21,9 +21,10 @@ var carDetails = {
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
 
-//Code Here
-
-
+const {color} = carDetails
+const {make} = carDetails
+const {model} = carDetails
+const {year} = carDetails
 
 ////////// PROBLEM 2 //////////
 
@@ -34,8 +35,11 @@ var carDetails = {
 */
 
 function greeting( obj ) {
-  //Code Here
   
+  const {firstName} = obj
+  const {lastName} = obj
+  const {title} = obj
+
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
@@ -52,9 +56,15 @@ function greeting( obj ) {
   Use object destructuring to save the property values to new variables.
   Sum up the values and return the total number.
 */
-
-//Code Here
-
+let sum = 0
+function totalPopulation(obj){
+  const {utah} = obj
+  const {california} = obj
+  const {texas} = obj
+  const {arizona} = obj
+  sum = utah + california + texas + arizona
+  return sum
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -66,9 +76,17 @@ function greeting( obj ) {
   Use object destructuring to save the property values to new variables. 
   Push these new variables to an array and return the array. 
 */
+let arr = []
+function ingredients(obj){
+  let {carb} = obj
+  let {fat} = obj
+  let {protein} = obj
+  arr.unshift(carb)
+  arr.unshift(fat) 
+  arr.unshift(protein)
 
-//Code Here
-
+  return arr
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -85,9 +103,15 @@ function greeting( obj ) {
   Find the smallest number of the three and return that number.
 */
 
-//Code Here
-
-
+function largeNumbers({first, second, third}){
+  let min = first
+  if(second < first){
+    min = second
+  }else if(third < first){
+    min = third
+  }
+  return min
+}
 
 ////////// PROBLEM 6 //////////
 
@@ -96,7 +120,21 @@ function greeting( obj ) {
   The object properties will be named a, b, and c and their values will be arrays of numbers.
   Find the longest array and return that array.
 */
+function numberGroups({a,b,c}){
 
-//Code Here
-
+  let len = a.length
+  if(b.length > len){
+    len = b.length
+  }else if(c.length > len){
+    len = c.length
+  }
+  
+  if(len === c.length){
+    return c
+  }else if(len === b.length){
+    return b
+  }else{
+    return a
+  }
+}
 
