@@ -97,8 +97,11 @@ function double(obj){
 function secrets(obj){
   let s = ""
   for(var key in obj){
-    
+    if(obj[key].slice(0,1) === 'sh'){
+      s += " " + obj[key]
+    }
   }
+  return s
 }
 
 
@@ -129,8 +132,10 @@ function secrets(obj){
   Delete the property password and return the object.
 */
 
-//Code Here
-
+function removePassword(obj){
+  delete obj.password
+  return obj
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -148,8 +153,11 @@ var deleteTheBigNumbers = {
   Write a for in loop that deletes every property from the object deleteTheBigNumbers whose value is greater than 100.
 */
 
-//Code Here
-
+for(var key in deleteTheBigNumbers){
+  if(deleteTheBigNumbers[key] > 100){
+    delete deleteTheBigNumbers[key]
+  }
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -161,9 +169,14 @@ var deleteTheBigNumbers = {
   Return the updated object.
 */
 
-//Code Here
-
-
+function startsWithK(obj){
+  for(var key in obj){
+    if(key[0] == 'k'){
+      delete obj[key]
+    }
+  }
+  return obj
+}
 
 ////////// PROBLEM 8 //////////
 
@@ -176,6 +189,5 @@ var deleteTheBigNumbers = {
   (hint: the method includes() may be of use...)
 */
 
-//Code Here
 
 
