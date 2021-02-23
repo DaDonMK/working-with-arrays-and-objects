@@ -78,12 +78,12 @@ function totalPopulation(obj){
 */
 let arr = []
 function ingredients(obj){
-  let {carb} = obj
-  let {fat} = obj
-  let {protein} = obj
-  arr.unshift(carb)
-  arr.unshift(fat) 
-  arr.unshift(protein)
+  const {carb} = obj
+  const {fat} = obj
+  const {protein} = obj
+  arr.push(carb)
+  arr.push(fat) 
+  arr.push(protein)
 
   return arr
 }
