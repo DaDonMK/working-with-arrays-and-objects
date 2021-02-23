@@ -27,9 +27,9 @@ var values = {
   In this next example, we are accessing the property names themselves. Uncomment the code below, run it and look at what prints in the console.
 */
 
-// for(var key in values) {
-//    console.log(key)
-//  }
+for(var key in values) {
+   console.log(key)
+ }
 
 
 
@@ -189,5 +189,17 @@ function startsWithK(obj){
   (hint: the method includes() may be of use...)
 */
 
+function hiddenTreasure(obj){
+
+  for(var key in obj){
+    if(obj[key].includes('treasure')){
+      continue
+    }else{
+      delete obj[key]
+    }
+
+  }
+  return obj
+}
 
 
