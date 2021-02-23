@@ -136,11 +136,12 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 */
 let total = 0
 let x = 0
-let bobsTotal = purchases.reduce(function(curr,accum){
-
-  return accum + curr.price
-    
-}) 
-console.log(bobsTotal)
-
+var bobsTotal = function(){
+  for(i = 0; i < purchases.length; i++){
+    if(purchases[i].owner === 'Bob'){
+      total += purchases[i].price
+    }
+  }
+return total 
+}
 
